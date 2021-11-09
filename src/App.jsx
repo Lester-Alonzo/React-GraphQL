@@ -13,9 +13,9 @@ function App() {
   const { result, first, setName } = usePeticion();
   const ped = (e) => {
     setNombre(e.target.value);
+    setName(Nombre);
   };
   const pet = () => {
-    setName(Nombre);
     setCambio(true);
     first();
   };
