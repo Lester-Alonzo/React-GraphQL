@@ -26,6 +26,9 @@ export const FIND_ONE_PERSON = gql`
       image
       status
       type
+      episode {
+        name
+      }
       origin {
         name
       }
@@ -33,6 +36,25 @@ export const FIND_ONE_PERSON = gql`
         name
       }
       species
+    }
+  }
+`;
+export const ESPESIFIC_CHAR = gql`
+  query ($name: String!, $page: Int!) {
+    characters(page: $page, filter: { name: $name }) {
+      info {
+        count
+      }
+      results {
+        id
+        name
+        status
+        image
+        gender
+        episode {
+          name
+        }
+      }
     }
   }
 `;

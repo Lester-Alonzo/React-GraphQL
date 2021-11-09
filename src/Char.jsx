@@ -13,15 +13,26 @@ const Char = ({ personaje }) => {
     setModalV(true);
   };
   return (
-    <section className="grid-colum3">
+    <section className="grid-colum2">
       {ModalV ? <Modal personage={result} modalState={setModalV} /> : null}
 
       {personaje.map((perso) => (
-        <div key={v4()} onClick={() => personaId(perso.id)}>
-          <h2>Nombre: {perso.name}</h2>
-          <img src={perso.image} alt="character" />
-          <p>Genero: {perso.gender}</p>
-          <span>Estatus: {perso.status}</span>
+        <div key={v4()} className="meora">
+          <img src={perso.image} alt="character" className="imgModal" />
+          <div className="flex-colum">
+            <h2>Nombre: {perso.name}</h2>
+            <p>Genero: {perso.gender}</p>
+            <span className="denomi">
+              Estatus:{" "}
+              <span className={perso.status === "Dead" ? "dead" : "comon"}>
+                {" "}
+                {perso.status}
+              </span>
+            </span>
+            <button className="ver" onClick={() => personaId(perso.id)}>
+              Ver mas
+            </button>
+          </div>
         </div>
       ))}
     </section>
