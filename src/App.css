@@ -8,7 +8,7 @@ button {
   cursor: pointer;
 }
 img {
-  width: 50%;
+  max-width: 100%;
   border-radius: 9px 0px 0px 9px;
 }
 input[type="text"] {
@@ -69,11 +69,14 @@ input[type="text"] {
 }
 .meora {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   background-color: rgb(27, 25, 25);
   border-radius: 1rem;
+}
+.texx{
+    margin: 0 auto;
 }
 
 .dead {
@@ -114,10 +117,15 @@ input[type="text"] {
   width: 100%;
 }
 .episodios {
-  height: 8rem;
+  margin: 0;
+  padding: 2rem;
   overflow-y: scroll;
 }
+.episodios h3{
+    margin: 0 auto;
+}
 .episodios li {
+    margin: 0 auto;
   margin-top: 9px;
   list-style: decimal;
 }
@@ -165,7 +173,7 @@ input[type="text"] {
 }
 @media screen and (max-width: 995px) {
   img {
-    width: 100%;
+    /* width: 100%; */
     border-radius: 9px 9px 0px 0px;
   }
   .modal {
@@ -182,8 +190,27 @@ input[type="text"] {
   .grid-colum2 {
     grid-template-columns: 1fr;
   }
-
+    .meora img{
+        width:100%;
+    }
   .modal {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (max-height: 500px) {
+  .tarjeta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    overflow-y: auto;
+    text-align: center;
+  }
+  .tarjeta img {
+    margin-left: 4rem;
+    border-radius: 9px;
+  }
+  .episodios {
+      max-height: 2rem;
   }
 }

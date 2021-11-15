@@ -19,7 +19,7 @@ const Char = ({ personaje }) => {
       {personaje.map((perso) => (
         <div key={v4()} className="meora">
           <img src={perso.image} alt="character" className="imgModal" />
-          <div className="flex-colum">
+          <div className="flex-colum texx">
             <h2>Nombre: {perso.name}</h2>
             <p>Genero: {perso.gender}</p>
             <span className="denomi">
